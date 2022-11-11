@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="center">
+    <h2>MUSICS</h2>
+    </div>
+    <div class="center"><button class="btn btn-dark" style="width: 20% " onclick="window.location.href='Create/{{ album.id }}';"><b>ADD MUSIC</b></button></div>
+    <br><br>
+    {% if musics %}
+    <table>
+      <tr>
+        <th>Music Title</th>
+          <th>Music Artist</th>
+          <th>Created On</th>
+          <th>Open</th>
+        <th>Update</th>
+          <th>Delete</th>
+      </tr>
+        {% for music in musics %}
+      <tr>
+        <td>{{ music.title }}</td>
+          <td>{{ music.artist }}</td>
+        <td>{{ music.date_created.date() }}</td>
+          <td><button class="btn btn-primary" onclick="window.location.href='/Album/Music/Open/{{ music.id }}';">OPEN</button></td>
+          <td><button class="btn btn-warning" onclick="window.location.href='/Album/Music/Update/{{ music.id }}';">UPDATE</button></td>
+          <td><button class="btn btn-danger"onclick="window.location.href='/Album/Music/Delete/{{ music.id }}';">DELETE</button></td>
+      </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <h2>No Musics in this album</h2>
+        <h2>Add Music to show in list</h2>
+    {% endif %}
+{% endblock %}

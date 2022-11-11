@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Music player</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block header %} {% endblock %}
+</head>
+<body class="bg">
+
+
+   <div class="bg-nav text-dark d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Music Player</h5>
+
+        <div class="center">
+
+        <form action="/Search" method="POST" >
+            <input type="text" maxlength="300"  name="search" id="search">
+            <input class="btn btn-success" class="search-button" type="submit" value="SEARCH">
+        </form>
+        </div>
+
+         <nav class="my-2 my-md-0 mr-md-3 text-dark">
+        <a class="btn btn-outline-dark" class="p-2 text-dark" href="/musicpage">Home</a>
+      </nav>
+      <a class="btn btn-outline-dark" href="/logout">Log out</a>
+    </div>
+
+
+
+
+<!--    <div class="bg-nav">-->
+<!--    <div class="header bg-nav">-->
+<!--        <h1>MUSIC STREAMING WEB APPLICATION</h1>-->
+<!--    </div>-->
+<!--    <div class="bg-nav">-->
+<!--        <button onclick="window.location.href='/';"><b>ALL ALBUM</b></button>-->
+<!--        <form action="/Search" method="POST">-->
+<!--            <input type="text" maxlength="250" name="search" id="search">-->
+<!--            <input class="search-button" type="submit" value="SEARCH">-->
+<!--        </form>-->
+<!--    </div>-->
+<!--        </div>-->
+    {% block body %} {% endblock %}
+</body>
+</html>

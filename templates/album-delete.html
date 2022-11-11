@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <div class="Main">
+    <div class="center">
+    <h2 >DELETE ALBUM</h2>
+        </div>
+
+    <div class="center"> <h3>Are you sure to delete {{ album.title }} album? </h3> </div>
+    <form action="/Album/Delete/{{ album.id }}" method="POST" class="center">
+        <input class="btn btn-outline-danger"type="submit" value="Delete Album">
+    </form>
+    </div>
+{% endblock %}

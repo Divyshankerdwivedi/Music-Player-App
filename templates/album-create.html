@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <div class="Main">
+    <div class="center">
+    <h2>ADD ALBUM</h2>
+         </div>
+     <form action="/Album/Create" method="POST" class="center">
+        <h3>Enter Album Name</h3>
+         <br><br>
+        <input type="text" maxlength="250" name="title" id="title">
+        <br><br>
+        <input class="btn btn-outline-success"type="submit" value="Add Album">
+     </form>
+        </div>
+{% endblock %}

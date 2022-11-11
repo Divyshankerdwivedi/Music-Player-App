@@ -1,0 +1,91 @@
+h1{
+
+}
+
+.header{
+    padding: .5%;
+    background-color: grey;
+}
+
+.nav{
+    padding: .5%;
+    background-color: grey;
+}
+
+.nav button{
+    width: 20%;
+}
+
+.nav form {
+    margin: 0 .25% 0 10%;
+    display: inline-block;
+    width: 50%;
+}
+
+.nav form input{
+    display: inline-block;
+    width: 75%;
+}
+
+.nav .search-button{
+    width: 20%;
+}
+
+table {
+    width:98%;
+    margin:16px;
+
+}
+
+td, th {
+
+    text-align: center;
+    padding: 8px;
+    border-radius:15px;
+}
+
+
+
+
+.bg-nav{
+background: #00c3ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #00c3ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.center
+{
+
+
+
+margin: auto;
+  width: 80%;
+
+  padding: 15px;
+
+  display : flex;
+text-align:center;
+justify-content:center;
+}
+
+.bg
+{
+background-image: url("");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+
+

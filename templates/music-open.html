@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/music-open.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="Main">
+    <div class="center">
+    <h2>MUSIC DETAIL</h2>
+    </div>
+    <div class="row-form center">
+    <h3 class="row-col">MUSIC TITLE</h3>
+    <p class="row-col">{{ music.title }}</p>
+    </div>
+    <div class="row-form center">
+    <h3 class="row-col">MUSIC ALBUM</h3>
+    <p class="row-col">{{ album.title }}</p>
+    </div>
+    <div class="row-form center">
+    <h3 class="row-col">MUSIC ARTIST</h3>
+    <p class="row-col">{{ music.artist }}</p>
+    </div>
+    <div class="row-form center">
+    <h3 class="row-col">CREATED ON</h3>
+    <p class="row-col">{{ music.date_created.date() }}</p>
+    </div>
+    <br> <br>
+     <div class="center">
+    <audio controls autoplay class="center">
+        <source src="{{ url_for( 'static', filename=song) }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+         </div>
+    <br><br>
+
+    {% if music.filename %}
+     <div class="center">
+        <a href="{{ url_for( 'static', filename=song) }}" download><button class="btn btn-outline-info" style="width: auto"><b>DOWNLOAD</b></button></a>
+    {% else %}
+        <h4>No song Uploaded</h4>
+        <h4>So, Cannot be played and downloaded</h4>
+        <a href="{{ url_for( 'static', filename=song) }}" download><button disabled style="width: 20%"><b>DOWNLOAD</b></button></a>
+    </div>
+    </div>
+    {% endif %}{% endblock %}

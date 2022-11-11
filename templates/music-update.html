@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/music-update.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="Main">
+    <div class="center">
+    <h2>UPDATE MUSIC</h2>
+        </div>
+     <div class="center"><h3>Update music in {{ album.title }} album</h3> </div>
+    <form  action="/Album/Music/Update/{{ music.id }}" method="POST" enctype="multipart/form-data">
+        <div class="row-form center">
+        <h3 class="row-col">Enter Music Name</h3>
+        <input class="row-col" type="text" maxlength="250" name="title" id="title" value={{ music.title }}>
+        </div>
+        <div class="row-form center">
+        <h3 class="row-col">Enter Music Artist Name</h3>
+        <input class="row-col" type="text" maxlength="250" name="artist" id="artist" value={{ music.artist }}>
+        </div>
+        <div class="row-form center">
+        <h3 class="row-col">Upload song</h3>
+        <input class="btn btn-outline-warning" class="row-col" type="file" accept=".mp3"name="song" id="song">
+        </div>
+        <br>
+        <div class="center">
+        <input class="btn btn-success" type="submit" value="Update Music">
+            </div>
+    </form>
+  </div>
+
+
+
+
+{% endblock %}
