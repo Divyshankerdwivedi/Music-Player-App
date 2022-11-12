@@ -245,5 +245,5 @@ def search():
     return render_template('music-search.html', albums=albums, musics=musics, artists=artists, string=search_str)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
