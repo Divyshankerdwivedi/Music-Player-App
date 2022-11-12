@@ -78,7 +78,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///music.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
