@@ -12,7 +12,20 @@ import os
 app = Flask(__name__)
 app.secret_key=os.urandom(24)
 
-conn = mysql.connector.connect(host='localhost',user='root',password='d1i2v3y4',port='3306', database='users')
+localserver = "localhost"
+localDatabase = "users"
+localUser = "root"
+localPassword="d1i2v3y4"
+localPort = "3306"
+
+prodDatabase = "sql12564490"
+prodUserName = "sql12564490"
+prodServer = "sql12.freemysqlhosting.net"
+prodPassword= "z2IUgys6uB"
+prodPort = "3306"
+
+# conn = mysql.connector.connect(host='localhost',user='root',password='d1i2v3y4',port='3306', database='users')
+conn = mysql.connector.connect(host=prodServer,user=prodUserName,password=prodPassword,port=prodPort, database=prodDatabase)
 cursor = conn.cursor()
 
 @app.route('/')
@@ -245,5 +258,5 @@ def search():
     return render_template('music-search.html', albums=albums, musics=musics, artists=artists, string=search_str)
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
